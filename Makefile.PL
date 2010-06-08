@@ -10,7 +10,8 @@ requires 'parent'       => 0.2000;
 
 test_requires 'Test::More' => 0.88; # done_testing()
 
-tests_recursive 't';
+tests_recursive;
+author_tests 'xt';
 
 auto_set_repository() if -d '.git';
 
