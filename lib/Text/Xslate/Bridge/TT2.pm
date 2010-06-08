@@ -38,7 +38,7 @@ This document describes Text::Xslate::Bridge::TT2 version 1.0000.
 
 =head1 DESCRIPTION
 
-Template-Toolkit sucks, but has a few useful features. Virtula methods is such a feature.
+Template-Toolkit sucks, but has a few useful features. Virtual methods is such a feature.
 This module provides Xslate with Template-Toolkit virtual methods.
 
 =head1 INTERFACE

@@ -16,3 +16,5 @@ __DATA__
 Goro Fuji (gfx)
 gfuji(at)cpan.org
 Text::Xslate::Bridge::TT2
+gfx
+cpan
