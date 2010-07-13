@@ -22,6 +22,7 @@ my @set = (
     <: "foo".match('(o+)')[0] :>
     <: "foo".search('o') ? "ok" : "not ok" :>
     <: "foo".search('x') ? "ok" : "not ok" :>
+    <: "foo".repeat(3) :>
 T
     0
     3
@@ -30,6 +31,7 @@ T
     oo
     ok
     not ok
+    foofoofoo
 X
 
     [<<'T', <<'X' ],

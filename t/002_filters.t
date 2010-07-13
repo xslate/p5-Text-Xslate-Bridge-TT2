@@ -28,6 +28,7 @@ my @set = (
     [% "  foo  bar  " | collapse %]
     [% "  foo  bar  " | null %]
     [% "<foo>" | html %]
+    [% "foo" | repeat(3) %]
 T
     FOO
     foo
@@ -39,6 +40,7 @@ T
     foo bar
     
     &lt;foo&gt;
+    foofoofoo
 X
 
     [ <<'T', <<'X' ],

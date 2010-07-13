@@ -7,8 +7,8 @@ use warnings;
 our $VERSION = '1.0000';
 
 use parent qw(Text::Xslate::Bridge);
-use Template::VMethods;
-use Template::Filters;
+use Template::VMethods ();
+use Template::Filters  ();
 use Carp ();
 
 my $ThisClass    = __PACKAGE__;
@@ -50,7 +50,7 @@ __END__
 
 =head1 NAME
 
-Text::Xslate::Bridge::TT2 - Template-Toolkit virtual methods for Xslate
+Text::Xslate::Bridge::TT2 - Template-Toolkit virtual methods and filters for Xslate
 
 =head1 VERSION
 
@@ -58,24 +58,34 @@ This document describes Text::Xslate::Bridge::TT2 version 1.0000.
 
 =head1 SYNOPSIS
 
-    use Text::Xslate::Bridge::TT2;
+    use Text::Xslate;
 
     my $xslate = Text::Xslate->new(
-        function => { Text::Xslate::Bridge::TT2->methods },
+        module => ['Text::Xslate::Bridge::TT2'],
     );
 
     print $xslate->render_string('<: "foo".length() :>'); # => 3
 
 =head1 DESCRIPTION
 
-Template-Toolkit sucks, but has a few useful features. Virtual methods is such a feature.
-This module provides Xslate with Template-Toolkit virtual methods.
+Template-Toolkit sucks, but has a few useful features.
+Virtual methods and filters are such a feature.
+This module provides Xslate with Template-Toolkit virtual methods and filters.
 
-=head1 INTERFACE
+=head1 CAVEAT
 
-=head2 Class methods
+=head2 Limitation of dynamic filters
 
-=head3 C<< Text::Xslate::Bridge::TT2->methods() -> %methods >>
+All the dynamic filters require parens (i.e. to "call" them first),
+even if you want to omit their arguments.
+
+    [% FILTER repeat   # doesn't work! %]
+    [% FILTER repeat() # works. %]
+
+=head2 Unsupported features
+
+Filters that require Template-Toolkit context object are not supported,
+which include C<eval>, C<evaltt>, C<perl>, C<evalperl> and C<redirect>.
 
 =head1 DEPENDENCIES
 
