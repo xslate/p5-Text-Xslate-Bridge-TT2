@@ -8,13 +8,43 @@ our $VERSION = '1.0000';
 
 use parent qw(Text::Xslate::Bridge);
 use Template::VMethods;
+use Template::Filters;
+use Carp ();
+
+my $ThisClass    = __PACKAGE__;
+my $DummyContext = bless {}, $ThisClass . '::DummyContext';
+
+my %Function = %{$Template::Filters::FILTERS};
+
+delete $Function{html}; # builtin
+
+
+while(my($name, $filter) = each %Function) {
+    if(ref($filter) eq 'ARRAY') {
+        my($body, $is_dynamic) = @{$filter};
+
+        $Function{$name} = sub {
+            return $body->($DummyContext, @_);
+        };
+    }
+}
 
 __PACKAGE__->bridge(
-    scalar => $Template::VMethods::TEXT_VMETHODS,
-    array  => $Template::VMethods::LIST_VMETHODS,
-    hash   => $Template::VMethods::HASH_VMETHODS,
+    scalar   => $Template::VMethods::TEXT_VMETHODS,
+    array    => $Template::VMethods::LIST_VMETHODS,
+    hash     => $Template::VMethods::HASH_VMETHODS,
+
+    function => \%Function,
 );
 
+package
+    Text::Xslate::Bridge::TT2::DummyContext;
+
+sub AUTOLOAD {
+    Carp::croak("Template-Toolkit specific features are not supported in $ThisClass");
+}
+
+sub DESTROY { }
 1;
 __END__
 

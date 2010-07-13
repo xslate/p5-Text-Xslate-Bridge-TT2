@@ -4,7 +4,7 @@ use inc::Module::Install;
 
 all_from 'lib/Text/Xslate/Bridge/TT2.pm';
 
-requires 'Text::Xslate' => 0.1029;
+requires 'Text::Xslate' => 0.1045;
 requires 'Template'     => 2.0000;
 requires 'parent'       => 0.2000;
 
