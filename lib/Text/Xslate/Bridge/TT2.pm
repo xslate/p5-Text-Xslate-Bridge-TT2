@@ -4,7 +4,7 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '1.0000';
+our $VERSION = '1.0001';
 
 use parent qw(Text::Xslate::Bridge);
 use Template::VMethods ();
@@ -54,7 +54,7 @@ Text::Xslate::Bridge::TT2 - Template-Toolkit virtual methods and filters for Xsl
 
 =head1 VERSION
 
-This document describes Text::Xslate::Bridge::TT2 version 1.0000.
+This document describes Text::Xslate::Bridge::TT2 version 1.0001.
 
 =head1 SYNOPSIS
 
