@@ -4,9 +4,11 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '1.0001';
+our $VERSION = '1.0002';
 
 use parent qw(Text::Xslate::Bridge);
+use Text::Xslate ();
+
 use Template::VMethods ();
 use Template::Filters  ();
 use Carp ();
@@ -17,15 +19,17 @@ my $DummyContext = bless {}, $ThisClass . '::DummyContext';
 my %Function = %{$Template::Filters::FILTERS};
 
 delete $Function{html}; # builtin
-
+delete $Function{uri} if $Text::Xslate::VERSION >= 0.1052; # builtin
 
 while(my($name, $filter) = each %Function) {
     if(ref($filter) eq 'ARRAY') {
         my($body, $is_dynamic) = @{$filter};
 
-        $Function{$name} = sub {
-            return $body->($DummyContext, @_);
-        };
+        if($is_dynamic) {
+            $Function{$name} = sub {
+                return $body->($DummyContext, @_);
+            };
+        }
     }
 }
 
@@ -54,7 +58,7 @@ Text::Xslate::Bridge::TT2 - Template-Toolkit virtual methods and filters for Xsl
 
 =head1 VERSION
 
-This document describes Text::Xslate::Bridge::TT2 version 1.0001.
+This document describes Text::Xslate::Bridge::TT2 version 1.0002.
 
 =head1 SYNOPSIS
 
@@ -104,6 +108,8 @@ L<Text::Xslate>
 L<Template>
 
 L<Template::Manual::VMethods>
+
+L<Template::Manual::Filters>
 
 =head1 AUTHOR
 

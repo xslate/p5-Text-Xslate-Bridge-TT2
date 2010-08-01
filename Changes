@@ -1,5 +1,8 @@
 Revision history for Perl extension Text::Xslate::Bridge::TT2
 
+1.0002 Sun Aug  1 14:46:04 2010
+    - The "uri" filter is a builtin filter from Xslate 0.1052
+
 1.0001 Tue Jul 13 20:20:59 2010
     - Add filters from Template::Toolkit::Filters
 
