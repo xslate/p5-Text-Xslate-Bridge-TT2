@@ -21,3 +21,10 @@ cover_db*
 *.gno
 *.gcov
 *.stackdump
+/Text-Xslate-Bridge-TT2-*
+/.build
+/_build_params
+/Build
+!Build/
+!META.json
+!LICENSE

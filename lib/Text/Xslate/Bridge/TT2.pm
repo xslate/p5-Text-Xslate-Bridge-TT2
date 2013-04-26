@@ -54,7 +54,7 @@ __END__
 
 =head1 NAME
 
-Text::Xslate::Bridge::TT2 - Template-Toolkit virtual methods and filters for Xslate
+Text::Xslate::Bridge::TT2 - Template-Toolkit virtual methods and filters for Xslate (deprecated)
 
 =head1 VERSION
 
@@ -72,9 +72,7 @@ This document describes Text::Xslate::Bridge::TT2 version 1.0002.
 
 =head1 DESCRIPTION
 
-Template-Toolkit sucks, but has a few useful features.
-Virtual methods and filters are such a feature.
-This module provides Xslate with Template-Toolkit virtual methods and filters.
+This is B<< a demo module to extend Text::Xslate::Brige >>. Use L<Text::Xslate::Bridge::TT2Like>, which is a stand alone utilities compatible with TT2.
 
 =head1 CAVEAT
 
