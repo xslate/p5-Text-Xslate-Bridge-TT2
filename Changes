@@ -2,6 +2,11 @@ Revision history for Perl extension Text::Xslate::Bridge::TT2
 
 {{$NEXT}}
 
+1.0003 2013-04-26T06:02:46Z
+    - Mark this module as "deprecate", because it's just a demo
+      to *import* TT2's virtual methods and filters.
+      Use TT2Like for production.
+
 1.0002 Sun Aug  1 14:46:04 2010
     - The "uri" filter is a builtin filter from Xslate 0.1052
 

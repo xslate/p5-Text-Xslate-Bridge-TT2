@@ -1,7 +1,7 @@
 {
    "abstract" : "Template-Toolkit virtual methods and filters for Xslate (deprecated)",
    "author" : [
-      "Goro Fuji (gfx) <gfuji(at)cpan.org>"
+      "Fuji, Goro (gfx) <gfuji@cpan.org>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Minilla/v0.0.56, CPAN::Meta::Converter version 2.130880",
@@ -27,7 +27,6 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.59",
             "Test::More" : "0.88"
          }
       },
@@ -67,8 +66,8 @@
          "web" : "https://github.com/xslate/p5-Text-Xslate-Bridge-TT2"
       }
    },
-   "version" : "1.0002",
+   "version" : "1.0003",
    "x_contributors" : [
-      "gfx <gfuji@cpan.org>"
+      "Fuji, Goro <g.psy.va@gmail.com>"
    ]
 }

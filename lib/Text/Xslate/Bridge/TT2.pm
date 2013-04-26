@@ -4,7 +4,7 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '1.0002';
+our $VERSION = '1.0003';
 
 use parent qw(Text::Xslate::Bridge);
 use Text::Xslate ();
@@ -52,13 +52,15 @@ sub DESTROY { }
 1;
 __END__
 
+=for stopwords parens
+
 =head1 NAME
 
 Text::Xslate::Bridge::TT2 - Template-Toolkit virtual methods and filters for Xslate (deprecated)
 
 =head1 VERSION
 
-This document describes Text::Xslate::Bridge::TT2 version 1.0002.
+This document describes Text::Xslate::Bridge::TT2 version 1.0003.
 
 =head1 SYNOPSIS
 
@@ -111,11 +113,11 @@ L<Template::Manual::Filters>
 
 =head1 AUTHOR
 
-Goro Fuji (gfx) E<lt>gfuji(at)cpan.orgE<gt>
+Fuji, Goro (gfx) E<lt>gfuji@cpan.orgE<gt>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2010, Goro Fuji (gfx). All rights reserved.
+Copyright (c) 2010-2013, Fuji, Goro (gfx). All rights reserved.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. See L<perlartistic> for details.

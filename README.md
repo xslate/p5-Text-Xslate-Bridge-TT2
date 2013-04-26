@@ -4,7 +4,7 @@ Text::Xslate::Bridge::TT2 - Template-Toolkit virtual methods and filters for Xsl
 
 # VERSION
 
-This document describes Text::Xslate::Bridge::TT2 version 1.0002.
+This document describes Text::Xslate::Bridge::TT2 version 1.0003.
 
 # SYNOPSIS
 
@@ -57,11 +57,11 @@ to cpan-RT.
 
 # AUTHOR
 
-Goro Fuji (gfx) <gfuji(at)cpan.org>
+Fuji, Goro (gfx) <gfuji@cpan.org>
 
 # LICENSE AND COPYRIGHT
 
-Copyright (c) 2010, Goro Fuji (gfx). All rights reserved.
+Copyright (c) 2010-2013, Fuji, Goro (gfx). All rights reserved.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. See [perlartistic](http://search.cpan.org/perldoc?perlartistic) for details.
